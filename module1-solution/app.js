@@ -22,10 +22,13 @@
       var items = countItems($scope.lunchInput);
       if (items <= 0) {
         $scope.message = "Please enter data first";
+        $scope.color = "red";
       } else if (items <= 3) {
         $scope.message = "Enjoy!";
+        $scope.color = "green";
       } else {
         $scope.message = "Too much!";
+        $scope.color = "green";
       }
     }
   }

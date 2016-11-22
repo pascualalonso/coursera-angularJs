@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .green {color: green}
+      .red {color: red}
     </style>
   </head>
 <body ng-app='LunchCheck'>
@@ -19,11 +21,12 @@
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control"
              ng-model="lunchInput">
+             Please note that empty items are ignore.
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="onCheckIfTooMuch()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div class="form-group message {{color}}">
            <!-- Your message can go here. -->
            {{message}}
          </div>
