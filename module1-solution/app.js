@@ -4,11 +4,13 @@
   .controller('LunchCheckController',LunchCheckController);
 
   function countItems(commaDelimitedList) {
-    var list = commaDelimitedList.split(",");
     var items = 0;
-    for (var i=0; i < list.length; i++) {
-      if (list[i].trim().length > 0) {
-        items++;
+    if (commaDelimitedList) {
+      var list = commaDelimitedList.split(",");
+      for (var i=0; i < list.length; i++) {
+        if (list[i].trim().length > 0) {
+          items++;
+        }
       }
     }
     return items;
