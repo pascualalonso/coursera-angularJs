@@ -1,0 +1,17 @@
+<table border="0" ng-if="items.length > 0">
+  <!-- <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>&nbsp;</th>
+  </tr> -->
+  <tr ng-repeat="item in items" class="d{{$index%2}}">
+    <td>{{ item.short_name }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.description }}</td>
+    <td nowrap>
+      <button ng-click="onRemove({index: $index});">Don't want this one!</button>
+    </td>
+  </tr>
+</table>
+<div class="red" ng-if="items.length === 0 && calls > 0"> Nothing found</div>

@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <style media="screen">
+      tr.d0 td {
+        background-color: #f0f0f0;
+      }
+      tr.d1 td {
+        background-color: white;
+      }
+      .red {
+        color : red;
+        font-size: 24px;
+      }
+    </style>
   </head>
 <body ng-app="NarrowItDownApp">
    <div class="container" ng-controller="NarrowItDownController as controller">
@@ -19,8 +31,15 @@
       <button class="btn btn-primary" ng-click="controller.narrowItDown();">Narrow It Down For Me!</button>
     </div>
 
+    <br>
+    <p>&nbsp;</p>
+
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
+    <found-items
+      items="controller.found"
+      calls="controller.calls"
+      on-remove="controller.remove(index)"
+    ></found-items>
   </div>
 
 </body>
