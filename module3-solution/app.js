@@ -19,13 +19,6 @@
       return ddo;
     }
 
-    if (Array.prototype.extend === undefined) {
-      Array.prototype.extend = function(other) {
-        this.push.apply(this, arguments.length > 1 ? arguments : other);
-        return this;
-      };
-    }
-
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(service) {
       var controller = this;
@@ -52,8 +45,7 @@
       function filter(searchTerm,found) {
         found.length = 0;
         if (searchTerm === undefined || searchTerm === "") {
-          // uncommet this to include all entries.
-          // service.found.extend(service.menuItems);
+          // implement here all the entries instead of none!
         } else {
           searchTerm = searchTerm.toLowerCase();
           var keys = service.keys;
