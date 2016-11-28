@@ -26,6 +26,9 @@
       controller.found = []
       controller.calls = 0;
 
+      // force to load store
+      service.getMatchedMenuItems(controller.searchTerm,controller.found);
+
       controller.narrowItDown = function () {
         service.getMatchedMenuItems(controller.searchTerm,controller.found);
         controller.calls++;
